@@ -1,0 +1,79 @@
+18
+import java.io.*;
+public class TestClass {
+	  public static void main(String[] args)throws IOException { 
+		InputStreamReader is=new InputStreamReader(System.in);
+       BufferedReader br=new BufferedReader(is); 
+		int n=Integer.parseInt(br.readLine());
+        if(n%2==0)
+          System.out.print("Even");
+        else
+          System.out.print("Odd");
+	}
+}
+
+57
+import java.util.*;
+class Sample
+{
+  	public int adajcentElementsDifference(int[] arr,int n)
+    {
+      int maxSum=0,diff;
+      for(int i=0;i<(arr.length-1);i++)
+      {
+        	diff =arr[i]-arr[i+1];
+        	if(diff>maxSum)
+              maxSum=diff;
+      }
+      return maxSum;
+    }
+  
+}
+public class TestClass {
+	public static void main(String[] args) 
+    { 
+			Scanner sc=new Scanner(System.in);
+      		int n=sc.nextInt();
+      		int[] arr=new int[n];
+      		for(int i=0;i<n;i++)
+            {
+              	arr[i]=sc.nextInt();
+              	//System.out.print(arr[i]+ " ");
+            }
+      		Sample objname=new Sample();
+      		int diff=objname.adajcentElementsDifference(arr,n);
+      		System.out.println(diff);
+	}
+}
+
+68
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+       int n,i,j,p,k,y,m,temp;
+       int a[]=new int[10];
+       int t=sc.nextInt();
+       for(i=1;i<=t;i++)
+       {n=sc.nextInt();
+        for(j=1;j<=n;j++)
+        a[j]=sc.nextInt();
+        p=sc.nextInt();
+        int val=a[p];
+        for(k=1;k<=n;k++)
+        {for(y=1;y<=n-k;y++)
+        {if(a[y]>a[y+1]){
+          temp=a[y];
+          a[y]=a[y+1];
+          a[y+1]=temp;
+        }
+        }}
+        for(m=1;m<=n;m++)
+        {if(val==a[m])
+        System.out.println(m);
+        }
+       }
+       
+	}
+}
